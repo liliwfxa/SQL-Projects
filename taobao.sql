@@ -104,7 +104,7 @@ ORDER BY gap_days;
 
 
 
--- C #浏览，点击、收藏、加购物车、支付 lost rate
+-- C #PV，Clicking、Fav、Shopcart、Purchasing's lost rate
 -- 1. pV to click lost rate
 SELECT 
     (COUNT(*) - SUM(CASE WHEN behavior_type = 1 THEN 1 ELSE 0 END)) / COUNT(*) AS pv_click_lostrate
@@ -129,7 +129,7 @@ from taobao;
 
 
 
--- 2. 计算三种行为后加购转化率
+-- 2. Conversion Rate
 
 WITH ClickToBuy AS (
     SELECT COUNT(*) AS total
